@@ -8,12 +8,15 @@ export interface ModalHandlerUsers {
     hasError: any,
 }
 
-export interface FormUserProps {
+export interface ModalProps {
     user?: User,
     showModal: boolean,
     toggleModal: ()=>void, 
-    handlerCrud: (option:string ,data:User)=>void, 
+    
     title:string,
+}
+export interface FormUserProps extends ModalProps{
+    handlerCrud: (option:string ,data:User)=>void, 
 }
 
 export interface User {
@@ -45,7 +48,7 @@ export interface MenuProps {
     command: ()=>void
 }
 
-export interface  ModalConfirmationProps  extends FormUserProps {
+export interface  ModalConfirmationProps extends ModalProps   {
  text:string
  confirmation:any
 }
